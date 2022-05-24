@@ -11,7 +11,7 @@ const dummyData = [
   {
     id: 2,
     title: "Something to do 2",
-    done: true
+    done: false
   },
 ]
 

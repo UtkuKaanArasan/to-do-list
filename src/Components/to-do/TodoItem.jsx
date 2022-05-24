@@ -1,28 +1,27 @@
 import styled from './TodoItem.module.css';
-import {useState} from 'react'
+import { useState } from 'react'
 
-
-function TodoItem({item}) {
+function TodoItem({ item }) {
 
     const [isDone, setIdDone] = useState(item.done)
-
-    console.log(isDone);
+    const [itemStyling, setItemStyling] = useState("")
 
     function checkboxHandler() {
         if (isDone === true) {
             setIdDone(false)
+            setItemStyling(null)
         }
         else if (isDone === false) {
             setIdDone(true)
+            setItemStyling(styled.listItemDone)
         }
     }
 
     return (
         < div key={item.id} className={styled.listContainer} >
             <input type="checkbox" onChange={checkboxHandler} />
-            <li>{item.title}</li>
+            <li className={itemStyling}>{item.title}</li>
         </div >
-
     )
 }
 
