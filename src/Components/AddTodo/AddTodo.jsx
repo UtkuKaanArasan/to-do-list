@@ -3,7 +3,7 @@ import styled from './AddTodo.module.css'
 // Dependencies
 import { useState } from "react";
 
-function AddTodo() {
+function AddTodo(props) {
 
     const [todo, setTodo] = useState("");
 
@@ -11,15 +11,17 @@ function AddTodo() {
         setTodo(e.target.value);
     }
 
-    function onSubmitHandler(e) {
+    async function onSubmitHandler(e) {
         e.preventDefault();
         console.log(todo);
+        setTodo(e.target.value)
         setTodo({
             id: todo,
             title: todo,
             done: false
         })
         console.log(todo);
+        await props.newData(todo)
     }
 
     return (
@@ -31,6 +33,7 @@ function AddTodo() {
                 placeholder='Write here...'
                 onChange={onChangeHandler}
             />
+            <p>{ todo.title }</p>
             <button className={styled.formButton} type="submit">Add</button>
         </form>
     )
