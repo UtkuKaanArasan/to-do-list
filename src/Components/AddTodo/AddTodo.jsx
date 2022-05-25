@@ -14,6 +14,12 @@ function AddTodo() {
     function onSubmitHandler(e) {
         e.preventDefault();
         console.log(todo);
+        setTodo({
+            id: todo,
+            title: todo,
+            done: false
+        })
+        console.log(todo);
     }
 
     return (
