@@ -1,13 +1,15 @@
+// Styling
 import './App.css';
-import Nav from './Components/Nav';
+// Components
+import AddTodo from './Components/AddTodo/AddTodo';
 import Todo from './Components/to-do/Todo';
+// Data
 import { dummyData } from './Data/dummyData';
-
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <AddTodo />
       <Todo data={dummyData} />
     </div>
   );

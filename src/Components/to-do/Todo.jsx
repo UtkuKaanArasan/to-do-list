@@ -1,4 +1,6 @@
+// Style
 import styled from './Todo.module.css'
+// Components
 import TodoItem from './TodoItem';
 
 function Todo({ data }) {

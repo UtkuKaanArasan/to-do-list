@@ -1,4 +1,6 @@
+// Style
 import styled from './TodoItem.module.css';
+// Components
 import { useState } from 'react'
 
 function TodoItem({ item }) {
