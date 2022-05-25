@@ -23,6 +23,7 @@ function TodoItem({ item }) {
         < div key={item.id} className={styled.listContainer} >
             <input type="checkbox" onChange={checkboxHandler} />
             <li className={itemStyling}>{item.title}</li>
+            <button>Remove</button>
         </div >
     )
 }
