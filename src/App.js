@@ -11,9 +11,10 @@ function App() {
 
   const [dataArray, setDataArray] = useState([])
 
-  async function newDataHandler(data) {
-    console.log(data);
-    // I can manage pass the state upwards and when i console log it logs correct but i cant render it
+  function newDataHandler(data) {
+    setDataArray((prevArray) => {
+      return [...prevArray, data]
+    })
   }
 
   return (

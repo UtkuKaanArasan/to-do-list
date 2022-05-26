@@ -1,27 +1,28 @@
 // Style
 import styled from './AddTodo.module.css'
 // Dependencies
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 function AddTodo(props) {
 
+    const [value, setValue] = useState({});
     const [todo, setTodo] = useState("");
 
     function onChangeHandler(e) {
         setTodo(e.target.value);
     }
 
-    async function onSubmitHandler(e) {
+    function onSubmitHandler(e) {
         e.preventDefault();
-        console.log(todo);
-        setTodo(e.target.value)
-        setTodo({
+        props.newData(value)
+    }
+
+    function onClickHandler() {
+        setValue({
             id: todo,
             title: todo,
             done: false
         })
-        console.log(todo);
-        await props.newData(todo)
     }
 
     return (
@@ -33,8 +34,9 @@ function AddTodo(props) {
                 placeholder='Write here...'
                 onChange={onChangeHandler}
             />
+            {/* Think p tag like console log */}
             <p>{ todo.title }</p>
-            <button className={styled.formButton} type="submit">Add</button>
+            <button onClick={onClickHandler} className={styled.formButton} type="submit">Add</button>
         </form>
     )
 }
