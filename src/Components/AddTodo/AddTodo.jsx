@@ -1,7 +1,7 @@
 // Style
 import styled from './AddTodo.module.css'
 // Dependencies
-import { useCallback, useState } from "react";
+import { useState } from "react";
 
 function AddTodo(props) {
 
@@ -11,12 +11,7 @@ function AddTodo(props) {
     function onChangeHandler(e) {
         setTodo(e.target.value);
     }
-
-    function onSubmitHandler(e) {
-        e.preventDefault();
-        props.newData(value)
-    }
-
+    
     function onClickHandler() {
         setValue({
             id: todo,
@@ -24,7 +19,12 @@ function AddTodo(props) {
             done: false
         })
     }
-
+    
+    function onSubmitHandler(e) {
+        e.preventDefault();
+        props.newData(value)
+    }
+    
     return (
         <form className={styled.form} onSubmit={onSubmitHandler}>
             <h2 className={styled.formH2}>Add what you want todo later</h2>
