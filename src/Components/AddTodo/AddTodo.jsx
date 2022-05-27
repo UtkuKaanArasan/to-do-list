@@ -5,24 +5,19 @@ import { useState } from "react";
 
 function AddTodo(props) {
 
-    const [value, setValue] = useState({});
     const [todo, setTodo] = useState("");
 
     function onChangeHandler(e) {
         setTodo(e.target.value);
     }
     
-    function onClickHandler() {
-        setValue({
+    function onSubmitHandler(e) {
+        e.preventDefault();
+        props.newData({
             id: todo,
             title: todo,
             done: false
         })
-    }
-    
-    function onSubmitHandler(e) {
-        e.preventDefault();
-        props.newData(value)
     }
     
     return (
@@ -34,9 +29,7 @@ function AddTodo(props) {
                 placeholder='Write here...'
                 onChange={onChangeHandler}
             />
-            {/* Think p tag like console log */}
-            <p>{ todo.title }</p>
-            <button onClick={onClickHandler} className={styled.formButton} type="submit">Add</button>
+            <button className={styled.formButton} type="submit">Add</button>
         </form>
     )
 }
