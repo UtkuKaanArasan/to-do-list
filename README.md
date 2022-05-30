@@ -1,4 +1,3 @@
-I will write this later pls leave me alone
 
 # React To-do list app
 
