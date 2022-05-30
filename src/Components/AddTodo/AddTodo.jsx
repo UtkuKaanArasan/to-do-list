@@ -1,11 +1,12 @@
 // Style
 import styled from './AddTodo.module.css'
 // Dependencies
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function AddTodo(props) {
 
     const [todo, setTodo] = useState("");
+    const submitButton = useRef()
 
     function onChangeHandler(e) {
         setTodo(e.target.value);
@@ -19,6 +20,7 @@ function AddTodo(props) {
             title: todo,
             done: false
         })
+        submitButton.current.value = ""
     }
     
     return (
@@ -29,6 +31,7 @@ function AddTodo(props) {
                 type="text" 
                 placeholder='Write here...'
                 onChange={onChangeHandler}
+                ref={submitButton}
             />
             <button className={styled.formButton} type="submit">Add</button>
         </form>
