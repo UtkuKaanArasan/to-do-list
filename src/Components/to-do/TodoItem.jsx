@@ -1,9 +1,9 @@
 // Style
 import styled from './TodoItem.module.css';
-// Components
+// Dependencies
 import { useState } from 'react'
 
-function TodoItem({ item }) {
+function TodoItem({ item, remove }) {
 
     const [isDone, setIdDone] = useState(item.done)
     const [itemStyling, setItemStyling] = useState("")
@@ -19,11 +19,16 @@ function TodoItem({ item }) {
         }
     }
 
+    function removeHandler() {
+        // prop drilling goes to "Todo" component
+        remove(item.id)
+    }
+
     return (
         < div key={item.id} className={styled.listContainer} >
             <input type="checkbox" onChange={checkboxHandler} />
             <li className={itemStyling}>{item.title}</li>
-            <button>Remove</button>
+            <button onClick={removeHandler}>Remove</button>
         </div >
     )
 }

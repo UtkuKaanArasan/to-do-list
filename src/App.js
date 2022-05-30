@@ -5,7 +5,7 @@ import './App.css';
 import AddTodo from './Components/AddTodo/AddTodo';
 import Todo from './Components/to-do/Todo';
 // Data
-import { dummyData } from './Data/dummyData';
+//import { dummyData } from './Data/dummyData';
 
 function App() {
 
@@ -17,10 +17,18 @@ function App() {
     })
   }
 
+  function removeHandler(data) {
+    setDataArray(
+      dataArray.filter((item) => {
+        return data !== item.id
+      })
+    )
+  }
+
   return (
     <div className="App">
       <AddTodo newData={newDataHandler} />
-      <Todo data={dataArray} />
+      <Todo remove={removeHandler} data={dataArray} />
     </div>
   );
 }

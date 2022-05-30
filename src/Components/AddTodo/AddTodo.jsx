@@ -13,8 +13,9 @@ function AddTodo(props) {
     
     function onSubmitHandler(e) {
         e.preventDefault();
+        const randomId = Math.floor(Math.random() * 255)
         props.newData({
-            id: todo,
+            id: randomId,
             title: todo,
             done: false
         })
