@@ -1,7 +1,7 @@
-// Style
-import styled from './Todo.module.css'
 // Components
 import TodoItem from './TodoItem';
+// Style
+import styled from './Todo.module.css'
 
 function Todo({ data, remove }) {
 

@@ -1,7 +1,7 @@
+// Hooks
+import { useRef, useState } from "react";
 // Style
 import styled from './AddTodo.module.css'
-// Dependencies
-import { useRef, useState } from "react";
 
 function AddTodo(props) {
 

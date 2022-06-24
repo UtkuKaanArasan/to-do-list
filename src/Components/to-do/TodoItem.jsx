@@ -1,7 +1,7 @@
+// Hooks
+import { useState } from 'react'
 // Style
 import styled from './TodoItem.module.css';
-// Dependencies
-import { useState } from 'react'
 
 function TodoItem({ item, remove }) {
 

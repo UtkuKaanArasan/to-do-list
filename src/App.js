@@ -1,9 +1,10 @@
-// Styling
-import { useState } from 'react';
-import './App.css';
 // Components
 import AddTodo from './Components/AddTodo/AddTodo';
 import Todo from './Components/to-do/Todo';
+// Styling
+import './App.css';
+//Hooks
+import { useState } from 'react';
 // Data
 //import { dummyData } from './Data/dummyData';
 
